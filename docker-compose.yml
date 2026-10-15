@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: indic
+      POSTGRES_PASSWORD: indic
+      POSTGRES_DB: indictranslate
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U indic -d indictranslate"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+
+  backend:
+    build:
+      context: ./backend
+      args:
+        INSTALL_ML: "false"   # set to "true" (and TRANSLATOR_BACKEND=indictrans2) for the real model
+    environment:
+      DATABASE_URL: postgresql+psycopg2://indic:indic@db:5432/indictranslate
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: ${SECRET_KEY:-dev-only-change-me}
+      TRANSLATOR_BACKEND: ${TRANSLATOR_BACKEND:-mock}
+      CORS_ORIGINS: http://localhost:5173,http://localhost:8080
+    depends_on:
+      db: { condition: service_healthy }
+      redis: { condition: service_started }
+    ports: ["8000:8000"]
+
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["8080:80"]
+
+volumes:
+  pgdata:

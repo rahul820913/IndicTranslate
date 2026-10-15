@@ -1,0 +1,19 @@
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30
+sqlalchemy>=2.0
+psycopg2-binary>=2.9
+pydantic[email]>=2.7
+pydantic-settings>=2.3
+bcrypt>=4.1
+PyJWT>=2.8
+redis>=5.0
+httpx>=0.27
+pytest>=8.0
+
+# Machine learning
+numpy>=2.1,<3.0
+torch>=2.5
+transformers>=4.51,<5.0
+sentencepiece
+IndicTransToolkit
+huggingface-hub >= 0.34.0, < 1.0

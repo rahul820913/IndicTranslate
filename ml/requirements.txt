@@ -1,0 +1,8 @@
+torch
+transformers>=4.44
+datasets
+sentencepiece
+sacremoses
+sacrebleu
+accelerate
+git+https://github.com/VarunGumma/IndicTransToolkit.git

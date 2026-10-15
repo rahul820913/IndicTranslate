@@ -1,0 +1,181 @@
+# =========================
+# Environment variables & secrets
+# =========================
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+secrets/
+credentials/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+.eggs/
+build/
+develop-eggs/
+dist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+pytestdebug.log
+.python-version
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+backend/.venv/
+frontend/.venv/
+
+# =========================
+# ML models, datasets & outputs
+# =========================
+ml/checkpoints/
+ml/data/*
+!ml/data/.gitkeep
+ml/results/
+ml/outputs/
+ml/logs/
+models/
+checkpoints/
+datasets/
+data/raw/
+data/processed/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.bin
+*.model
+*.tflite
+*.h5
+*.keras
+*.npz
+*.npy
+*.parquet
+
+# =========================
+# Hugging Face cache
+# =========================
+.cache/
+cache/
+huggingface_cache/
+hf_cache/
+**/.cache/huggingface/
+**/models--ai4bharat--*/
+
+# =========================
+# Node.js / frontend
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.output/
+.vite/
+.turbo/
+.parcel-cache/
+.svelte-kit/
+.angular/
+storybook-static/
+
+# =========================
+# Databases & local storage
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+instance/
+uploads/
+storage/
+
+# =========================
+# Logs & temporary files
+# =========================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs & editors
+# =========================
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# =========================
+# Testing & reports
+# =========================
+test-results/
+playwright-report/
+.nyc_output/
+reports/
+
+# =========================
+# Deployment & infrastructure
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+serverless/
+.vercel/
+.netlify/
+
+# =========================
+# Local configuration
+# =========================
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

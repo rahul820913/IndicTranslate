@@ -1,0 +1,7 @@
+# Only needed when TRANSLATOR_BACKEND=indictrans2
+# Pin versions that match the IndicTrans2 README; trust_remote_code models can break on newer transformers.
+torch
+transformers>=4.44
+sentencepiece
+sacremoses
+git+https://github.com/VarunGumma/IndicTransToolkit.git

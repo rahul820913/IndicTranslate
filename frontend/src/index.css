@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Bengali", "Noto Sans Tamil", system-ui, sans-serif;
+  --color-ink: #14213d;
+  --color-paper: #f5f7fb;
+  --color-line: #d5dbe8;
+  --color-saffron: #e8890c;
+}
+
+body { font-family: var(--font-body); background: var(--color-paper); color: var(--color-ink); }
